@@ -1,8 +1,7 @@
 {
   "name": "@michaellinhardt/helpers",
   "version": "1.0.3",
-  "main": "src/index.js",
-  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "start": "NODE_ENV=development npx nodemon ./src/index.js --exec babel-node",
     "script": "NODE_ENV=development babel-node",
@@ -10,7 +9,9 @@
     "prod": "node dist/src/index.js",
     "lint": "npx eslint ./src",
     "knex": "babel-node node_modules/.bin/knex",
-    "test": "npx eslint ./src"
+    "test": "npx eslint ./src",
+    "prepublishOnly": "npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
